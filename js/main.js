@@ -1,10 +1,21 @@
-console.log(document.getElementById("novoItem"))
+const form = document.getElementById("novoItem")
 
-form.eddEventListener("submite,evento") => {
-     evento.preventdefault()
+form.addEventListener("submit",(evento) => {
+    evento.preventDefault()
 
-
-    console.log(evento)
-    console.log(evento.target.elements["nome"].value)
-    console.log(evento.target.elements["quantidade"].value)
+    criaElemento(evento.target.elements['nome']).value, evento target.elements['quantidade'].value
 })
+
+function criElemento(nome,quantidade) {
+    console.log(nome)
+    console.log(quantidade)
+
+    // <li class="item"><strong>7</strong>camisas</li>
+    const novoItem = document.createElemrnt('li')
+    novoItem.classlist.add("item")
+
+    const numeroItem = document.createElement('strong')
+    numeroItem.innerHTML = quantidade
+
+    console.log(umeroItem)
+}
